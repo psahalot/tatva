@@ -11,6 +11,9 @@ include( get_stylesheet_directory() . '/inc/edd-config.php' ); // EDD config fil
 include( get_stylesheet_directory() . '/inc/widgets/image-widget/image-widget.php' ); // Image widget 
 include( get_stylesheet_directory() . '/inc/widgets/social-icons/simple-social-icons.php' ); // Social Icons widget 
 
+/* Include plugin activation file to install plugins */
+include get_template_directory() . '/inc/plugin-activation/plugin-details.php';
+
 
 /**
  * Set the content width based on the theme's design and stylesheet.
@@ -893,4 +896,15 @@ function tatva_body_classes($classes)
         $slug = strtolower(get_theme_mod( 'tatva_color_scheme' ));
         $classes[] = 'tatva-'.$slug;
         return $classes;
+}
+
+
+add_action( 'after_setup_theme', 'tgm_envira_define_license_key' );
+function tgm_envira_define_license_key() {
+    
+    // If the key has not already been defined, define it now.
+    if ( ! defined( 'ENVIRA_LICENSE_KEY' ) ) {
+        define( 'ENVIRA_LICENSE_KEY', 'f21b503f7793be583daab680a7f8bda7' );
+    }
+    
 }
