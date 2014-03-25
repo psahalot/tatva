@@ -61,6 +61,28 @@ function tatva_customize_register( $wp_customize ) {
 		),
 	) );
         
+        
+         // Add new section for theme layout and color schemes
+    $wp_customize->add_section('tatva_theme_layout_settings', array(
+        'title' => __('Layout', 'tatva'),
+        'priority' => 30,
+    ));
+
+    // Add setting for theme layout
+    $wp_customize->add_setting('tatva_theme_layout', array(
+        'default' => 'full-width',
+    ));
+
+    $wp_customize->add_control('tatva_theme_layout', array(
+        'label' => 'Theme Layout',
+        'section' => 'tatva_theme_layout_settings',
+        'type' => 'radio',
+        'choices' => array(
+            'full-width' => __('Full Width', 'tatva'),
+            'boxed' => __('Boxed', 'tatva'),
+        ),
+    ));
+    
         /** ===============
 	 * Extends CONTROLS class to add textarea
 	 */

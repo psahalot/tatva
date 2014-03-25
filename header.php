@@ -63,14 +63,15 @@
                                     } ?>
                                 </p>
 			</div> <!-- /.col.grid_5_of_12 -->
-
-			<div class="col grid_7_of_12">
-				<nav id="site-navigation" class="main-navigation" role="navigation">
+		</header> <!-- /#masthead.site-header.row -->
+                
+                <div class="nav-container">
+                    <nav id="site-navigation" class="main-navigation" role="navigation">
+                            <div class="col grid_12_of_12">
 					<h3 class="menu-toggle assistive-text"><?php esc_html_e( 'Menu', 'tatva' ); ?></h3>
 					<div class="assistive-text skip-link"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'tatva' ); ?>"><?php esc_html_e( 'Skip to content', 'tatva' ); ?></a></div>
 					<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu' ) ); ?>
-				</nav> <!-- /.site-navigation.main-navigation -->
-			</div> <!-- /.col.grid_7_of_12 -->
-		</header> <!-- /#masthead.site-header.row -->
-
+                            </div>
+                    </nav> <!-- /.site-navigation.main-navigation -->
+                </div><!-- /.nav-container -->
 	</div> <!-- /#headercontainer -->

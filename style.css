@@ -744,6 +744,14 @@ select {
         z-index: 1; 
 }
 
+#headercontainer:after{
+    content:".";
+    height:0px;
+    display:block;
+    clear:both;
+    visibility:hidden;
+}
+
 
 .site-header {
 	clear: both;
@@ -787,8 +795,6 @@ select {
 #bannercontainer {
         background: #42A2CE; 
 	width: 100%;
-	margin-top: 100px;
-        margin-top: 10rem;
 }
 
 .banner {
@@ -1706,6 +1712,9 @@ article.sticky {
    EDD Store Template
    ========================================================================== */
 
+.site-content .store-product{
+    margin-bottom:40px;
+}
 .store-title {
         margin-top: 0; 
 }
@@ -1732,6 +1741,11 @@ article.sticky {
 
 .store-product .product-price, .store-product .edd_download_purchase_form{
    margin-bottom:10px; 
+   text-align:center;
+}
+
+.product-buttons{
+    text-align:center;
 }
 
 .pagination
@@ -2335,11 +2349,11 @@ li span.dots {
    ========================================================================== */
 
 .main-navigation {
+        max-width:1140px;
+        width:90%;
 	text-align: left;
-	float: right;
+        margin:0 auto;
 	clear: right;
-	margin: 40px 0 0 0;
-	margin: 4rem 0 0 0;
         transition: all 0.3s ease;
         -webkit-transition: all 0.3s ease;
         -khtml-transition: all 0.3s ease;
@@ -2373,6 +2387,10 @@ li span.dots {
 	position: relative;
 	margin: 0 0 0 20px; /* Margin on the left side of each top level menu item (since it's floated right) */
 	margin: 0 0 0 2rem;
+}
+
+.main-navigation li:first-child {
+        margin: 0;
 }
 
 .main-navigation ul ul li {
@@ -2588,6 +2606,27 @@ li span.dots {
 }
 
 
+
+/* ==========================================================================
+    Boxed Layout
+   ========================================================================== */
+
+.boxed #wrapper{
+    max-width:1140px;
+    margin:0 auto;
+}
+
+.boxed #home-testimonial-container{
+    background:#239ACD;
+}
+
+.boxed #front-featured-posts{
+    background:#e3e3e3;
+}
+
+.boxed .site-content{
+    width:100%;
+}
 /* ==========================================================================
    IdeaBox Social Icons
    ========================================================================== */
@@ -2700,7 +2739,8 @@ img#wpstats {
 .tatva-red input:hover[type="submit"],
 .tatva-red .button:hover,
 .tatva-red .entry-content .button:hover,
-.tatva-red .main-navigation ul ul
+.tatva-red .main-navigation ul ul,
+.tatva-red.boxed #home-testimonial-container
 	{
 	background: #ef7a7a;
 	}
@@ -2729,6 +2769,10 @@ img#wpstats {
 	color:#ef7a7a;
 }
 
+.tatva-red .entry-header h1 a:hover{
+    color:#111;
+}
+
 /* ! Smart Shop green	*/
 
 .tatva-green #bannercontainer,
@@ -2744,7 +2788,8 @@ img#wpstats {
 .tatva-green input:hover[type="submit"],
 .tatva-green .button:hover,
 .tatva-green .entry-content .button:hover,
-.tatva-green .main-navigation ul ul
+.tatva-green .main-navigation ul ul,
+.tatva-green.boxed #home-testimonial-container
 	{
 	background: #77DFBA;
 	}
@@ -2772,6 +2817,10 @@ img#wpstats {
 	color:#77DFBA;
 }
 
+.tatva-green .entry-header h1 a:hover{
+    color:#111;
+}
+
 /* ! Smart Shop pink	*/
 
 .tatva-pink #bannercontainer,
@@ -2787,7 +2836,8 @@ img#wpstats {
 .tatva-pink input:hover[type="submit"],
 .tatva-pink .button:hover,
 .tatva-pink .entry-content .button:hover,
-.tatva-pink .main-navigation ul ul
+.tatva-pink .main-navigation ul ul,
+.tatva-pink.boxed #home-testimonial-container
 	{
 	background: #CC8ACE;
 	}
@@ -2816,6 +2866,10 @@ img#wpstats {
 	color:#CC8ACE;
 }
 
+.tatva-pink .entry-header h1 a:hover{
+    color:#111;
+}
+
 
 /* ! Smart Shop gray	*/
 .tatva-gray #bannercontainer,
@@ -2831,7 +2885,8 @@ img#wpstats {
 .tatva-gray input:hover[type="submit"],
 .tatva-gray .button:hover,
 .tatva-gray .entry-content .button:hover,
-.tatva-gray .main-navigation ul ul
+.tatva-gray .main-navigation ul ul,
+.tatva-gray.boxed #home-testimonial-container
 	{
 	background: #837E7C;
 	}
@@ -2859,6 +2914,10 @@ img#wpstats {
 	color:#837E7C;
 }
 
+.tatva-gray .entry-header h1 a:hover{
+    color:#111;
+}
+
 
 /* ! Smart Shop brown	*/
 .tatva-brown #bannercontainer,
@@ -2874,7 +2933,8 @@ img#wpstats {
 .tatva-brown input:hover[type="submit"],
 .tatva-brown .button:hover,
 .tatva-brown .entry-content .button:hover,
-.tatva-brown .main-navigation ul ul
+.tatva-brown .main-navigation ul ul,
+.tatva-brown.boxed #home-testimonial-container
 	{
 	background: #704705;
 	}
@@ -2903,6 +2963,10 @@ img#wpstats {
 	color:#704705;
 }
 
+.tatva-brown .entry-header h1 a:hover{
+    color:#111;
+}
+
 /* ! Smart Shop purple	*/
 .tatva-purple #bannercontainer,
 .tatva-purple .cta-button:hover,
@@ -2917,7 +2981,8 @@ img#wpstats {
 .tatva-purple input:hover[type="submit"],
 .tatva-purple .button:hover,
 .tatva-purple .entry-content .button:hover,
-.tatva-purple .main-navigation ul ul
+.tatva-purple .main-navigation ul ul,
+.tatva-purple.boxed #home-testimonial-container
 	{
 	background: #a678d3;
 	}
@@ -2946,6 +3011,10 @@ img#wpstats {
 	color:#a678d3;
 }
 
+.tatva-purple .entry-header h1 a:hover{
+    color:#111;
+}
+
 /* ! Smart Shop Orange	*/
 .tatva-orange #bannercontainer,
 .tatva-orange .cta-button:hover,
@@ -2960,7 +3029,8 @@ img#wpstats {
 .tatva-orange input:hover[type="submit"],
 .tatva-orange .button:hover,
 .tatva-orange .entry-content .button:hover,
-.tatva-orange .main-navigation ul ul
+.tatva-orange .main-navigation ul ul,
+.tatva-orange.boxed #home-testimonial-container
 	{
 	background: #fa7f53;
 	}
@@ -2987,6 +3057,10 @@ img#wpstats {
 .tatva-orange .more-link
 {
 	color:#fa7f53;
+}
+
+.tatva-orange .entry-header h1 a:hover{
+    color:#111;
 }
 
 /* ==========================================================================

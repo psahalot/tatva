@@ -890,13 +890,6 @@ add_filter( 'meta_content', 'wpautop' );
 add_filter( 'meta_content', 'shortcode_unautop'  );
 
 
-add_filter('body_class', 'tatva_body_classes');
-function tatva_body_classes($classes) 
-		{
-        $slug = strtolower(get_theme_mod( 'tatva_color_scheme' ));
-        $classes[] = 'tatva-'.$slug;
-        return $classes;
-}
 
 
 add_action( 'after_setup_theme', 'tgm_envira_define_license_key' );
@@ -906,5 +899,23 @@ function tgm_envira_define_license_key() {
     if ( ! defined( 'ENVIRA_LICENSE_KEY' ) ) {
         define( 'ENVIRA_LICENSE_KEY', 'f21b503f7793be583daab680a7f8bda7' );
     }
+    
+}
+
+add_filter('body_class', 'tatva_body_classes');
+function tatva_body_classes($classes) {
+    
+    if(get_theme_mod('tatva_theme_layout')) {
+        $classes[] = strtolower(get_theme_mod('tatva_theme_layout'));
+    
+    }
+    
+    if(get_theme_mod('tatva_color_scheme')) {
+        $slug = strtolower(get_theme_mod('tatva_color_scheme'));
+        $classes[] = 'tatva-' . $slug;
+        
+    }
+    
+    return $classes; 
     
 }
