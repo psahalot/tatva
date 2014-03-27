@@ -507,10 +507,6 @@ input[type="submit"] {
 	cursor: pointer;
 	background-color: #f5f5f5;
 	*background-color: #e6e6e6;
-	background-image: -ms-linear-gradient(top, #ffffff, #e6e6e6);
-	background-image: -o-linear-gradient(top, #ffffff, #e6e6e6);
-	background-image: linear-gradient(top, #ffffff, #e6e6e6);
-	background-image: -moz-linear-gradient(top, #ffffff, #e6e6e6);
 	background-repeat: repeat-x;
 	border: 1px solid #cccccc;
 	*border: 0;
@@ -950,7 +946,7 @@ select {
 
 /* Woo testimonials styling for home page */
 #home-testimonial-container { 
-        background: #eee;
+        background: #239ACD;
 }
 
 #home-testimonial {
@@ -1110,8 +1106,8 @@ select {
 	font-size: 1.6rem;
 	max-width: 1140px;
 	margin: 0 auto;
-	padding: 10px 0;
-	padding: 1rem 0;
+	padding: 20px 0;
+	padding: 2rem 0;
 	color: #333;
 	line-height: 1.5;
 	position: relative;
@@ -2105,11 +2101,11 @@ form label.error {
 /* ==========================================================================
    Sidebar
    ========================================================================== */
-
-.sidebar {
-        padding: 40px 30px 0 0;
-        padding: 4rem 3rem 0 0;
+.sidebar{
+    padding:40px 30px 0 0;
+    padding:4rem 3rem 0 0;
 }
+
 
 .sidebar a {
         color: #42A2CE;
@@ -2360,6 +2356,13 @@ li span.dots {
         -moz-transitiokn: all 0.3s ease;
 }
 
+.main-navigation:after{
+    content:".";
+    height:0x;
+    display:block;
+    clear:both;
+    visibility:hidden;
+}
 .main-navigation h1 {
 	font-size: 32px;
 	font-size: 2rem;
@@ -2606,6 +2609,29 @@ li span.dots {
 }
 
 
+/* ==========================================================================
+    Full Width Layout
+   ========================================================================== */ 
+.full-width #headercontainer{
+    border-bottom:1px solid #bcafaf;
+}
+
+.full-width #maincontentcontainer{
+    background:#fff;
+    margin:0;
+}
+
+.full-width.tatva-front-page #headercontainer{
+   border:none;
+}
+
+.full-width .main-content{
+    padding:0;
+}
+
+.full-width .pagination{
+    padding:20px 0;
+}
 
 /* ==========================================================================
     Boxed Layout
@@ -2613,11 +2639,7 @@ li span.dots {
 
 .boxed #wrapper{
     max-width:1140px;
-    margin:0 auto;
-}
-
-.boxed #home-testimonial-container{
-    background:#239ACD;
+    margin:30px auto;
 }
 
 .boxed #front-featured-posts{
@@ -2626,6 +2648,29 @@ li span.dots {
 
 .boxed .site-content{
     width:100%;
+    padding:0 20px;
+}
+
+.boxed .home-sidebar{
+    width:100%;
+    padding:0 20px;
+}
+
+.boxed #featured-posts-container{
+    width:100%;
+    padding:1rem 2rem;
+}
+
+.boxed #maincontentcontainer{
+    margin:0px;
+}
+
+.boxed #headercontainer{
+    border-bottom:1px solid #bcafaf;
+}
+
+.boxed.tatva-front-page #headercontainer{
+   border:none;
 }
 /* ==========================================================================
    IdeaBox Social Icons
@@ -2724,7 +2769,7 @@ img#wpstats {
 /* ==========================================================================
    Color Schemes
    ========================================================================== */
-/* ! Smart Shop red	*/
+/* ! Tatva red	*/
 
 .tatva-red #bannercontainer,
 .tatva-red .cta-button:hover,
@@ -2740,7 +2785,7 @@ img#wpstats {
 .tatva-red .button:hover,
 .tatva-red .entry-content .button:hover,
 .tatva-red .main-navigation ul ul,
-.tatva-red.boxed #home-testimonial-container
+.tatva-red #home-testimonial-container
 	{
 	background: #ef7a7a;
 	}
@@ -2773,7 +2818,7 @@ img#wpstats {
     color:#111;
 }
 
-/* ! Smart Shop green	*/
+/* ! Tatva green	*/
 
 .tatva-green #bannercontainer,
 .tatva-green .cta-button:hover,
@@ -2789,7 +2834,7 @@ img#wpstats {
 .tatva-green .button:hover,
 .tatva-green .entry-content .button:hover,
 .tatva-green .main-navigation ul ul,
-.tatva-green.boxed #home-testimonial-container
+.tatva-green #home-testimonial-container
 	{
 	background: #77DFBA;
 	}
@@ -2821,7 +2866,7 @@ img#wpstats {
     color:#111;
 }
 
-/* ! Smart Shop pink	*/
+/* ! Tatva pink	*/
 
 .tatva-pink #bannercontainer,
 .tatva-pink .cta-button:hover,
@@ -2837,9 +2882,9 @@ img#wpstats {
 .tatva-pink .button:hover,
 .tatva-pink .entry-content .button:hover,
 .tatva-pink .main-navigation ul ul,
-.tatva-pink.boxed #home-testimonial-container
+.tatva-pink #home-testimonial-container
 	{
-	background: #CC8ACE;
+	background: #ed409f;
 	}
 
 .tatva-pink .main-navigation ul ul a
@@ -2849,7 +2894,7 @@ img#wpstats {
 
 .tatva-pink .footer-wrap
 {
-        background:#b671ba;
+        background:#ce3386;
 }
 .tatva-pink .site-title a,
 .tatva-pink .main-navigation a,
@@ -2863,7 +2908,7 @@ img#wpstats {
 .tatva-pink .entry-header h1 a:visited,
 .tatva-pink .more-link
 {
-	color:#CC8ACE;
+	color:#ed409f;
 }
 
 .tatva-pink .entry-header h1 a:hover{
@@ -2871,7 +2916,7 @@ img#wpstats {
 }
 
 
-/* ! Smart Shop gray	*/
+/* ! Tatva gray	*/
 .tatva-gray #bannercontainer,
 .tatva-gray .cta-button:hover,
 .tatva-gray #footercontainer,
@@ -2886,7 +2931,7 @@ img#wpstats {
 .tatva-gray .button:hover,
 .tatva-gray .entry-content .button:hover,
 .tatva-gray .main-navigation ul ul,
-.tatva-gray.boxed #home-testimonial-container
+.tatva-gray #home-testimonial-container
 	{
 	background: #837E7C;
 	}
@@ -2919,7 +2964,7 @@ img#wpstats {
 }
 
 
-/* ! Smart Shop brown	*/
+/* ! Tatva brown	*/
 .tatva-brown #bannercontainer,
 .tatva-brown .cta-button:hover,
 .tatva-brown #footercontainer,
@@ -2934,7 +2979,7 @@ img#wpstats {
 .tatva-brown .button:hover,
 .tatva-brown .entry-content .button:hover,
 .tatva-brown .main-navigation ul ul,
-.tatva-brown.boxed #home-testimonial-container
+.tatva-brown #home-testimonial-container
 	{
 	background: #704705;
 	}
@@ -2967,7 +3012,7 @@ img#wpstats {
     color:#111;
 }
 
-/* ! Smart Shop purple	*/
+/* ! Tatva purple	*/
 .tatva-purple #bannercontainer,
 .tatva-purple .cta-button:hover,
 .tatva-purple #footercontainer,
@@ -2982,7 +3027,7 @@ img#wpstats {
 .tatva-purple .button:hover,
 .tatva-purple .entry-content .button:hover,
 .tatva-purple .main-navigation ul ul,
-.tatva-purple.boxed #home-testimonial-container
+.tatva-purple #home-testimonial-container
 	{
 	background: #a678d3;
 	}
@@ -3015,7 +3060,7 @@ img#wpstats {
     color:#111;
 }
 
-/* ! Smart Shop Orange	*/
+/* ! Tatva Orange	*/
 .tatva-orange #bannercontainer,
 .tatva-orange .cta-button:hover,
 .tatva-orange #footercontainer,
@@ -3030,7 +3075,7 @@ img#wpstats {
 .tatva-orange .button:hover,
 .tatva-orange .entry-content .button:hover,
 .tatva-orange .main-navigation ul ul,
-.tatva-orange.boxed #home-testimonial-container
+.tatva-orange #home-testimonial-container
 	{
 	background: #fa7f53;
 	}
@@ -3133,6 +3178,9 @@ img#wpstats {
         .container-slim .site-content {
                 width: 90%; 
         }
+        .main-navigation{
+            margin:0 auto;
+        }
         
 }
 
@@ -3204,6 +3252,30 @@ img#wpstats {
                 font-size: 2.4rem;
                 text-align: center; 
         }
+        
+        .home-product,
+        .home-featured-post,
+        #home-widget1,
+        #home-widget2,
+        #home-widget3,
+        #home-widget4,
+        .store-product{
+            width:350px;
+            float:none;
+            margin: 0 auto 20px !important;
+        }
+        
+        
+        .featured-section-title{
+            text-align:center;
+        }
+        
+        #footer-widget1,
+        #footer-widget2,
+        #footer-widget3,
+        #footer-widget4{
+            border-bottom:1px solid #e3e3e3;
+        }
 }
 
 
@@ -3246,6 +3318,25 @@ img#wpstats {
 	.social-media-icons {
 		text-align: center;
 	}
+        
+        .home-product,
+        .home-featured-post,
+        #home-widget1,
+        #home-widget2,
+        #home-widget3,
+        #home-widget4,
+        .store-product{
+            width:100%;
+        }
+        
+        .main-content{
+            padding:0px;
+        }
+        
+        .full-width #featured-posts-container{
+            width:100%;
+        }
+        
 }
 
 @media only screen and (max-width: 320px) {
