@@ -945,9 +945,7 @@ select {
 }
 
 /* Woo testimonials styling for home page */
-#home-testimonial-container { 
-        background: #239ACD;
-}
+
 
 #home-testimonial {
         max-width: 1140px;
@@ -2344,6 +2342,10 @@ li span.dots {
    Main Navigation
    ========================================================================== */
 
+.nav-container{
+    background: #239ACD;
+}
+
 .main-navigation {
         max-width:1140px;
         width:90%;
@@ -2425,7 +2427,7 @@ li span.dots {
 .main-navigation ul a {
         padding: 10px; 
 	padding: 1rem; /* Padding around each top level menu option (if needed) */
-        color:#42A2CE;
+        color:#fff;
 }
 
 .main-navigation ul a:hover{
@@ -2612,9 +2614,6 @@ li span.dots {
 /* ==========================================================================
     Full Width Layout
    ========================================================================== */ 
-.full-width #headercontainer{
-    border-bottom:1px solid #bcafaf;
-}
 
 .full-width #maincontentcontainer{
     background:#fff;
@@ -2664,11 +2663,6 @@ li span.dots {
 .boxed #maincontentcontainer{
     margin:0px;
 }
-
-.boxed #headercontainer{
-    border-bottom:1px solid #bcafaf;
-}
-
 .boxed.tatva-front-page #headercontainer{
    border:none;
 }
@@ -2784,13 +2778,13 @@ img#wpstats {
 .tatva-red input:hover[type="submit"],
 .tatva-red .button:hover,
 .tatva-red .entry-content .button:hover,
-.tatva-red .main-navigation ul ul,
-.tatva-red #home-testimonial-container
+.tatva-red .main-navigation ul ul
 	{
 	background: #ef7a7a;
 	}
 
-.tatva-red .footer-wrap
+.tatva-red .footer-wrap,
+.tatva-red .nav-container
 {
         background:#dd5d65;
 }
@@ -2800,7 +2794,6 @@ img#wpstats {
     color:#fff;
 }
 .tatva-red .site-title a,
-.tatva-red .main-navigation a,
 .tatva-red .home-featured-post-title,
 .tatva-red .sidebar a,
 .tatva-red .entry-header .entry-title a,
@@ -2833,8 +2826,7 @@ img#wpstats {
 .tatva-green input:hover[type="submit"],
 .tatva-green .button:hover,
 .tatva-green .entry-content .button:hover,
-.tatva-green .main-navigation ul ul,
-.tatva-green #home-testimonial-container
+.tatva-green .main-navigation ul ul
 	{
 	background: #77DFBA;
 	}
@@ -2843,12 +2835,12 @@ img#wpstats {
 {
     color:#fff;
 }
-.tatva-green .footer-wrap
+.tatva-green .footer-wrap,
+.tatva-green .nav-container
 {
         background:#5ec49e;
 }
 .tatva-green .site-title a,
-.tatva-green .main-navigation a,
 .tatva-green .home-featured-post-title,
 .tatva-green .sidebar a,
 .tatva-green .entry-header .entry-title a,
@@ -2881,8 +2873,7 @@ img#wpstats {
 .tatva-pink input:hover[type="submit"],
 .tatva-pink .button:hover,
 .tatva-pink .entry-content .button:hover,
-.tatva-pink .main-navigation ul ul,
-.tatva-pink #home-testimonial-container
+.tatva-pink .main-navigation ul ul
 	{
 	background: #ed409f;
 	}
@@ -2892,12 +2883,12 @@ img#wpstats {
     color:#fff;
 }
 
-.tatva-pink .footer-wrap
+.tatva-pink .footer-wrap,
+.tatva-pink .nav-container
 {
         background:#ce3386;
 }
 .tatva-pink .site-title a,
-.tatva-pink .main-navigation a,
 .tatva-pink .home-featured-post-title,
 .tatva-pink .sidebar a,
 .tatva-pink .entry-header .entry-title a,
@@ -2930,22 +2921,21 @@ img#wpstats {
 .tatva-gray input:hover[type="submit"],
 .tatva-gray .button:hover,
 .tatva-gray .entry-content .button:hover,
-.tatva-gray .main-navigation ul ul,
-.tatva-gray #home-testimonial-container
+.tatva-gray .main-navigation ul ul
 	{
-	background: #837E7C;
+	background: #8e8e8e;
 	}
 
 .tatva-gray .main-navigation ul ul a
 {
     color:#fff;
 }
-.tatva-gray .footer-wrap
+.tatva-gray .footer-wrap,
+.tatva-gray .nav-container
 {
-        background:#8e8e8e;
+        background:#837E7C;
 }
 .tatva-gray .site-title a,
-.tatva-gray .main-navigation a,
 .tatva-gray .home-featured-post-title,
 .tatva-gray .sidebar a,
 .tatva-gray .entry-header .entry-title a,
@@ -2956,7 +2946,7 @@ img#wpstats {
 .tatva-gray .entry-header h1 a:visited,
 .tatva-gray .more-link
 {
-	color:#837E7C;
+	color:#8e8e8e;
 }
 
 .tatva-gray .entry-header h1 a:hover{
@@ -2978,10 +2968,9 @@ img#wpstats {
 .tatva-brown input:hover[type="submit"],
 .tatva-brown .button:hover,
 .tatva-brown .entry-content .button:hover,
-.tatva-brown .main-navigation ul ul,
-.tatva-brown #home-testimonial-container
+.tatva-brown .main-navigation ul ul
 	{
-	background: #704705;
+	background: #875608;
 	}
 
 .tatva-brown .main-navigation ul ul a
@@ -2989,12 +2978,12 @@ img#wpstats {
     color:#fff;
 }
 
-.tatva-brown .footer-wrap
+.tatva-brown .footer-wrap,
+.tatva-brown .nav-container
 {
-        background:#875608;
+        background:#704705;
 }
 .tatva-brown .site-title a,
-.tatva-brown .main-navigation a,
 .tatva-brown .home-featured-post-title,
 .tatva-brown .sidebar a,
 .tatva-brown .entry-header .entry-title a,
@@ -3005,7 +2994,7 @@ img#wpstats {
 .tatva-brown .entry-header h1 a:visited,
 .tatva-brown .more-link
 {
-	color:#704705;
+	color:#875608;
 }
 
 .tatva-brown .entry-header h1 a:hover{
@@ -3026,8 +3015,7 @@ img#wpstats {
 .tatva-purple input:hover[type="submit"],
 .tatva-purple .button:hover,
 .tatva-purple .entry-content .button:hover,
-.tatva-purple .main-navigation ul ul,
-.tatva-purple #home-testimonial-container
+.tatva-purple .main-navigation ul ul
 	{
 	background: #a678d3;
 	}
@@ -3037,12 +3025,12 @@ img#wpstats {
     color:#fff;
 }
 
-.tatva-purple .footer-wrap
+.tatva-purple .footer-wrap,
+.tatva-purple .nav-container
 {
         background:#8837ce;
 }
 .tatva-purple .site-title a,
-.tatva-purple .main-navigation a,
 .tatva-purple .home-featured-post-title,
 .tatva-purple .sidebar a,
 .tatva-purple .entry-header .entry-title a,
@@ -3074,8 +3062,7 @@ img#wpstats {
 .tatva-orange input:hover[type="submit"],
 .tatva-orange .button:hover,
 .tatva-orange .entry-content .button:hover,
-.tatva-orange .main-navigation ul ul,
-.tatva-orange #home-testimonial-container
+.tatva-orange .main-navigation ul ul
 	{
 	background: #fa7f53;
 	}
@@ -3085,12 +3072,12 @@ img#wpstats {
     color:#fff;
 }
 
-.tatva-orange .footer-wrap
+.tatva-orange .footer-wrap,
+.tatva-orange .nav-container
 {
         background:#e06f4a;
 }
 .tatva-orange .site-title a,
-.tatva-orange .main-navigation a,
 .tatva-orange .home-featured-post-title,
 .tatva-orange .sidebar a,
 .tatva-orange .entry-header .entry-title a,
@@ -3312,7 +3299,6 @@ img#wpstats {
 	}
 	.main-navigation ul ul a {
 		color: #fff; /* Nav bar dropdown link color */
-		background-color: #333;  /* Nav bar dropdown background color */
 		width: 100%; /* Nav bar dropdown width */
 	}
 	.social-media-icons {
