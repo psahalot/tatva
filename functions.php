@@ -15,6 +15,17 @@ include( get_stylesheet_directory() . '/inc/widgets/social-icons/simple-social-i
 include get_template_directory() . '/inc/plugin-activation/plugin-details.php';
 
 
+if (!class_exists('tatva_SL_Theme_Updater')) {
+    // Load our custom theme updater
+    include( dirname(__FILE__) . '/inc/theme-updater.php' );
+}
+
+
+// configuration file for theme licensing 
+
+// theme updater and licensing
+
+include(get_stylesheet_directory() . '/inc/theme-updater-config.php');
 /**
  * Set the content width based on the theme's design and stylesheet.
  *
@@ -231,7 +242,17 @@ function tatva_widgets_init() {
 			'before_title' => '<h3 class="widget-title">',
 			'after_title' => '</h3>'
 		) );
-
+        
+        register_sidebar( array(
+			'name' => esc_html__( 'Header Widget', 'tatva' ),
+			'id' => 'header-widget',
+			'description' => esc_html__( 'Appears in the sidebar on posts and pages except the optional Front Page template, which has its own widgets', 'tatva' ),
+			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'after_widget' => '</aside>',
+			'before_title' => '<h3 class="widget-title">',
+			'after_title' => '</h3>'
+		) );
+        
 	register_sidebar( array(
 			'name' => esc_html__( 'Shop Sidebar', 'tatva' ),
 			'id' => 'sidebar-shop',

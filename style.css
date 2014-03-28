@@ -787,7 +787,19 @@ select {
         letter-spacing: 6px; 
 }
 
+.header-extras{
+    text-align:right;
+}
 
+.header-extras h3.widget-title{
+    margin:30px 0 0 0;
+    font-size:22px;
+    font-weight:300;
+}
+
+.header-extras p{
+    font-size:14px;
+}
 #bannercontainer {
         background: #42A2CE; 
 	width: 100%;
@@ -847,7 +859,7 @@ select {
 
 .cta-button {
         background: #fff; 
-        border: solid 1px #333; 
+        border: solid 3px #333; 
         font-size: 16px; 
         font-size: 1.6rem;
         display: inline-block;
@@ -1155,10 +1167,11 @@ select {
 
 .home-featured-post-title {
         font-family: "Open Sans", sans-serif; 
-        font-size: 16px; 
-        font-size: 1.6rem; 
+        font-size: 14px; 
+        font-size: 1.4rem; 
         margin-top: 0; 
         color:#42A2CE;
+        font-weight:700;
 }
 
 .feature-more-link {
@@ -1249,8 +1262,8 @@ select {
    ========================================================================== */
 
 .main-content {
-        padding: 20px 30px 20px 40px; 
-        padding: 2rem 3rem 2rem 4rem; 
+        padding: 20px 30px 20px 20px; 
+        padding: 2rem 3rem 2rem 2rem; 
 }
 
 .main-content:after
@@ -1726,11 +1739,13 @@ article.sticky {
 .edd-submit.button.blue{
     background:#fff;
     color:#333;
-    border:1px solid #ccc;
+    border:2px solid #333;
+    border-radius:4px;
 }
 .edd-submit.button.blue:hover
 {
    background:#42A2CE; 
+    padding:1.2rem 1.5rem;
 }
 
 .store-product .product-price, .store-product .edd_download_purchase_form{
@@ -1747,7 +1762,7 @@ article.sticky {
      padding: 2rem 3rem 2rem 4rem;
 }
 .pagination .page-numbers{
-    padding: 0px 15px;
+    padding: 5px 20px;
     border: 1px solid #ccc;
     background: #fff;
     color: #333;
@@ -2078,7 +2093,8 @@ form label.error {
 .smallprint p {
 	font-size: 14px;
 	font-size: 1.4rem;
-        padding-top:15px;
+        padding:15px 0;
+        margin:0;
 }
 
 .smallprint a { 
@@ -2356,11 +2372,12 @@ li span.dots {
         -webkit-transition: all 0.3s ease;
         -khtml-transition: all 0.3s ease;
         -moz-transitiokn: all 0.3s ease;
+        padding:1rem 0;
 }
 
 .main-navigation:after{
     content:".";
-    height:0x;
+    height:0px;
     display:block;
     clear:both;
     visibility:hidden;
@@ -2624,12 +2641,13 @@ li span.dots {
    border:none;
 }
 
-.full-width .main-content{
-    padding:0;
-}
 
 .full-width .pagination{
     padding:20px 0;
+}
+
+.full-width .main-content{
+      padding: 2rem 0rem 2rem 0rem; 
 }
 
 /* ==========================================================================
@@ -2666,6 +2684,8 @@ li span.dots {
 .boxed.tatva-front-page #headercontainer{
    border:none;
 }
+
+
 /* ==========================================================================
    IdeaBox Social Icons
    ========================================================================== */
@@ -3169,6 +3189,17 @@ img#wpstats {
             margin:0 auto;
         }
         
+        #home-widget1,
+        #home-widget2,
+        #home-widget3,
+        #home-widget4{
+            width:49%;
+        }
+        
+        .home-sidebar .col:nth-of-type(2n+1){
+            margin-left:0px;
+        }
+        
 }
 
 /*  Go full Width at less than 650px */
@@ -3242,16 +3273,19 @@ img#wpstats {
         
         .home-product,
         .home-featured-post,
-        #home-widget1,
-        #home-widget2,
-        #home-widget3,
-        #home-widget4,
         .store-product{
             width:350px;
             float:none;
             margin: 0 auto 20px !important;
         }
         
+        #home-widget1,
+        #home-widget2,
+        #home-widget3,
+        #home-widget4{
+            width:48%;
+            margin:0 auto 20px 2% !important;
+        }
         
         .featured-section-title{
             text-align:center;
@@ -3262,6 +3296,18 @@ img#wpstats {
         #footer-widget3,
         #footer-widget4{
             border-bottom:1px solid #e3e3e3;
+        }
+        
+        .full-width .main-content{
+            padding-left:2rem;
+        }
+        
+        .boxed .main-content{
+            padding:20px 0;
+        }
+        
+        .header-extras{
+            text-align:center;
         }
 }
 
@@ -3315,9 +3361,7 @@ img#wpstats {
             width:100%;
         }
         
-        .main-content{
-            padding:0px;
-        }
+       
         
         .full-width #featured-posts-container{
             width:100%;
