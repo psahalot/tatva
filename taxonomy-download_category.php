@@ -17,19 +17,8 @@ get_header(); ?>
                         
                         <div class="main-content">
                             
-			<?php
-                        
-			$current_page = get_query_var('paged');
-			$per_page = get_option('posts_per_page');
-			$offset = $current_page > 0 ? $per_page * ($current_page-1) : 0;
-			$product_args = array(
-				'post_type' => 'download',
-				'posts_per_page' => $per_page,
-				'offset' => $offset
-			);
-			$products = new WP_Query($product_args);
-			?>
-			<?php if ($products->have_posts()) : $i = 1; ?>
+			
+			<?php if (have_posts()) : $i = 1; ?>
                             <header class="archive-header">
 					<h1 class="archive-title"><?php printf( esc_html__( 'Product Category Archives: %s', 'tatva' ), '<span class="cat-archive">' . single_cat_title( '', false ) . '</span>' ); ?></h1>
 
@@ -37,7 +26,7 @@ get_header(); ?>
 						<div class="archive-meta"><?php echo category_description(); ?></div>
 					<?php } ?>
 				</header>
-				<?php while ($products->have_posts()) : $products->the_post(); ?>
+				<?php while (have_posts()) : the_post(); ?>
 					<div class="col grid_4_of_12 store-product">
 						<a href="<?php the_permalink(); ?>">
 							<h2 class="title"><?php the_title(); ?></h2>
@@ -72,13 +61,15 @@ get_header(); ?>
 				<?php endwhile; ?>
 				
 				<div class="pagination">
-					<?php 					
+					<?php 		
+                                                global $wp_query;
+                                                
 						$big = 999999999; // need an unlikely intege					
 						echo paginate_links( array(
 							'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
 							'format' => '?paged=%#%',
 							'current' => max( 1, get_query_var('paged') ),
-							'total' => $products->max_num_pages
+							'total' => $wp_query->max_num_pages
 						) );
 					?>
 				</div>

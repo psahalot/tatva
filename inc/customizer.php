@@ -241,7 +241,7 @@ function tatva_customize_register($wp_customize) {
         ));
 
         // store front item count
-        $wp_customize->add_setting('tatva_edd_store_front_count', array('default' => 6));
+        $wp_customize->add_setting('tatva_edd_store_front_count', array('default' => 3));
         $wp_customize->add_control('tatva_edd_store_front_count', array(
             'label' => __('Number of products to display', 'tatva'),
             'section' => 'tatva_edd_front_page_options',
