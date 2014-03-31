@@ -137,7 +137,7 @@ function tatva_customize_register($wp_customize) {
     ));
 
     // select number of posts for featured posts on front page
-    $wp_customize->add_setting('tatva_front_featured_posts_count', array('default' => 3));
+    $wp_customize->add_setting('tatva_front_featured_posts_count', array('default' => 4));
     $wp_customize->add_control('tatva_front_featured_posts_count', array(
         'label' => __('Number of posts to display (multiple of 4)', 'tatva'),
         'section' => 'tatva_front_page_post_options',
