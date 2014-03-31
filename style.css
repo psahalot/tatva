@@ -1,13 +1,13 @@
 /*
 Theme Name: Tatva
 Theme URI: http://ideaboxcreations.com
-Author: Puneet Sahalot
+Author: IdeaBox Themes
 Author URI: http://ideaboxcreations.com/
 Description: Tatva is your basic building block for creating beautiful, responsive custom themes. It's not a convoluted or confusing framework that's hard to learn or even harder to modify. It's a simple and elegant starter theme built on HTML5 & CSS3. Its base is a responsive, 12 column grid. It incorporates custom Theme Options that are easy to modify, a set of common templates, support for WordPress Post Formats and the gorgeous, retina friendly Font Awesome icon font.
-Version: 1.2.9
+Version: 1.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: black, gray, dark, light, one-column, two-columns, right-sidebar, fluid-layout, responsive-layout, custom-background, custom-header, custom-menu, editor-style, featured-image-header, featured-images, full-width-template, microformats, post-formats, sticky-post, theme-options, threaded-comments, translation-ready
+Tags: black, gray, dark, blue, red, pink, orange, green, brown, light, one-column, two-columns, right-sidebar, fluid-layout, responsive-layout, custom-background, custom-header, custom-menu, editor-style, featured-image-header, featured-images, full-width-template, microformats, post-formats, sticky-post, theme-options, threaded-comments, translation-ready
 Text Domain: tatva
 */
 
@@ -2518,7 +2518,7 @@ li span.dots {
 .main-navigation .current-menu-ancestor > a,
 .main-navigation .current_page_item > a,
 .main-navigation .current_page_ancestor > a {
-	color: #333; /* Nav bar link color for current menu item or ancestor */
+	color: #fff; /* Nav bar link color for current menu item or ancestor */
 }
 
 .main-navigation ul .divider {
