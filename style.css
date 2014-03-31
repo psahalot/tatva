@@ -1222,6 +1222,7 @@ select {
 
 .tatva-front-page .site-content article {
 	margin-bottom: 0;
+        margin-right: 0;
 }
 
 /* Social Media icons */
@@ -1324,6 +1325,8 @@ article.sticky {
 .site-content article {
 	margin-bottom: 40px;
 	margin-bottom: 4rem;
+        margin-right: 20px; 
+        margin-right: 2rem; 
 	-ms-word-wrap: break-word;
 	-webkit-hyphens: auto;
 	word-wrap: break-word;
@@ -2785,6 +2788,7 @@ img#wpstats {
 
 .tatva-red #bannercontainer,
 .tatva-red .cta-button:hover,
+.tatva-red .feature-more-link,
 .tatva-red #footercontainer,
 .tatva-red .edd-submit.button.blue:hover, 
 .tatva-red .pagination .page-numbers:hover,
@@ -2833,6 +2837,7 @@ img#wpstats {
 
 .tatva-green #bannercontainer,
 .tatva-green .cta-button:hover,
+.tatva-green .feature-more-link,
 .tatva-green #footercontainer,
 .tatva-green .edd-submit.button.blue:hover, 
 .tatva-green .pagination .page-numbers:hover,
@@ -2880,6 +2885,7 @@ img#wpstats {
 
 .tatva-pink #bannercontainer,
 .tatva-pink .cta-button:hover,
+.tatva-pink .feature-more-link,
 .tatva-pink #footercontainer,
 .tatva-pink .edd-submit.button.blue:hover, 
 .tatva-pink .pagination .page-numbers:hover,
@@ -2928,6 +2934,7 @@ img#wpstats {
 /* ! Tatva gray	*/
 .tatva-gray #bannercontainer,
 .tatva-gray .cta-button:hover,
+.tatva-gray .feature-more-link,
 .tatva-gray #footercontainer,
 .tatva-gray .edd-submit.button.blue:hover, 
 .tatva-gray .pagination .page-numbers:hover,
@@ -2975,6 +2982,7 @@ img#wpstats {
 /* ! Tatva brown	*/
 .tatva-brown #bannercontainer,
 .tatva-brown .cta-button:hover,
+.tatva-brown .feature-more-link,
 .tatva-brown #footercontainer,
 .tatva-brown .edd-submit.button.blue:hover, 
 .tatva-brown .pagination .page-numbers:hover,
@@ -3022,6 +3030,7 @@ img#wpstats {
 /* ! Tatva purple	*/
 .tatva-purple #bannercontainer,
 .tatva-purple .cta-button:hover,
+.tatva-purple .feature-more-link,
 .tatva-purple #footercontainer,
 .tatva-purple .edd-submit.button.blue:hover, 
 .tatva-purple .pagination .page-numbers:hover,
@@ -3069,6 +3078,7 @@ img#wpstats {
 /* ! Tatva Orange	*/
 .tatva-orange #bannercontainer,
 .tatva-orange .cta-button:hover,
+.tatva-orange .feature-more-link,
 .tatva-orange #footercontainer,
 .tatva-orange .edd-submit.button.blue:hover, 
 .tatva-orange .pagination .page-numbers:hover,
