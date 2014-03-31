@@ -1740,12 +1740,10 @@ article.sticky {
     background:#fff;
     color:#333;
     border:2px solid #333;
-    border-radius:4px;
 }
 .edd-submit.button.blue:hover
 {
    background:#42A2CE; 
-    padding:1.2rem 1.5rem;
 }
 
 .store-product .product-price, .store-product .edd_download_purchase_form{
@@ -3200,6 +3198,14 @@ img#wpstats {
             margin-left:0px;
         }
         
+        #home-widget1.grid_12_of_12,
+        #home-widget2.grid_12_of_12,
+        #home-widget3.grid_12_of_12,
+        #home-widget4.grid_12_of_12{
+            width:100%;
+            margin:0 auto 20px !important;
+        }
+        
 }
 
 /*  Go full Width at less than 650px */
@@ -3361,10 +3367,33 @@ img#wpstats {
             width:100%;
         }
         
+        #home-widget1.grid_6_of_12,
+        #home-widget2.grid_6_of_12,
+        #home-widget3.grid_6_of_12,
+        #home-widget4.grid_6_of_12{
+            width:100;
+            margin:0 auto 20px !important;
+        }
        
         
         .full-width #featured-posts-container{
             width:100%;
+        }
+        
+        #home-widget1.grid_4_of_12,
+        #home-widget2.grid_4_of_12,
+        #home-widget3.grid_4_of_12,
+        #home-widget4.grid_4_of_12{
+            width:100;
+            margin:0 auto 20px !important;
+        }
+       
+        #home-widget1.grid_3_of_12,
+        #home-widget2.grid_3_of_12,
+        #home-widget3.grid_3_of_12,
+        #home-widget4.grid_3_of_12{
+            width:100;
+            margin:0 auto 20px !important;
         }
         
 }
