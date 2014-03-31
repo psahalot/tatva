@@ -11,48 +11,50 @@
  */
 ?>
 
-	<div id="footercontainer">
+<div id="footercontainer">
 
-		<footer class="site-footer row" role="contentinfo">
+    <?php
+    // Count how many footer sidebars are active so we can work out how many containers we need
+    $footerSidebars = 0;
+    for ($x = 1; $x <= 4; $x++) {
+        if (is_active_sidebar('sidebar-footer' . $x)) {
+            $footerSidebars++;
+        }
+    }
 
-			<?php
-			// Count how many footer sidebars are active so we can work out how many containers we need
-			$footerSidebars = 0;
-			for ( $x=1; $x<=4; $x++ ) {
-				if ( is_active_sidebar( 'sidebar-footer' . $x ) ) {
-					$footerSidebars++;
-				}
-			}
+    // If there's one or more one active sidebars, create a row and add them
+    if ($footerSidebars > 0) {
+        ?>
+        <footer class="site-footer row" role="contentinfo">
+            <?php
+            // Work out the container class name based on the number of active footer sidebars
+            $containerClass = "grid_" . 12 / $footerSidebars . "_of_12";
 
-			// If there's one or more one active sidebars, create a row and add them
-			if ( $footerSidebars > 0 ) { ?>
-				<?php
-				// Work out the container class name based on the number of active footer sidebars
-				$containerClass = "grid_" . 12 / $footerSidebars . "_of_12";
+            // Display the active footer sidebars
+            for ($x = 1; $x <= 4; $x++) {
+                if (is_active_sidebar('sidebar-footer' . $x)) {
+                    ?>
+                    <div id="<?php echo 'footer-widget' . $x; ?>" class="col <?php echo $containerClass ?>">
+                        <div class="widget-area" role="complementary">
+                    <?php dynamic_sidebar('sidebar-footer' . $x); ?>
+                        </div>
+                    </div> <!-- /.col.<?php echo $containerClass ?> -->
+            <?php }
+        }
+        ?>
+        </footer> <!-- /.site-footer.row -->
+<?php } ?>
 
-				// Display the active footer sidebars
-				for ( $x=1; $x<=4; $x++ ) {
-					if ( is_active_sidebar( 'sidebar-footer'. $x ) ) { ?>
-						<div id="<?php echo 'footer-widget'.$x; ?>" class="col <?php echo $containerClass?>">
-							<div class="widget-area" role="complementary">
-								<?php dynamic_sidebar( 'sidebar-footer'. $x ); ?>
-							</div>
-						</div> <!-- /.col.<?php echo $containerClass?> -->
-					<?php }
-				} ?>
 
-			<?php } ?>
 
-		</footer> <!-- /.site-footer.row -->
-
-            <div class="footer-wrap">
-                <?php if (get_theme_mod('tatva_footer_footer_text')=='') { ?>
-                     <div class="row smallprint"><p><a href="http://ideaboxthemes.com/themes/tatva-wordpress-theme/"><?php _e('Tatva WordPress theme by IdeaBox','tatva'); ?></a></p></div>
-                <?php } else { ?>   
-                     <div class="row smallprint"><?php echo wpautop(get_theme_mod('tatva_footer_footer_text')); ?></div>
-                <?php } ?> 
-            </div> <!-- /.footer-wrap -->
-	</div> <!-- /.footercontainer -->
+    <div class="footer-wrap">
+        <?php if (get_theme_mod('tatva_footer_footer_text') == '') { ?>
+            <div class="row smallprint"><p><a href="http://ideaboxthemes.com/themes/tatva-wordpress-theme/"><?php _e('Tatva WordPress theme by IdeaBox', 'tatva'); ?></a></p></div>
+<?php } else { ?>   
+            <div class="row smallprint"><?php echo wpautop(get_theme_mod('tatva_footer_footer_text')); ?></div>
+<?php } ?> 
+    </div> <!-- /.footer-wrap -->
+</div> <!-- /.footercontainer -->
 
 </div> <!-- /.#wrapper.hfeed.site -->
 
