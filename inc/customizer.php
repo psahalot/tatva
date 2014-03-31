@@ -265,6 +265,34 @@ function tatva_customize_register($wp_customize) {
             'priority' => 40,
         ));
     }
+    
+     // Add footer text section
+    $wp_customize->add_section('tatva_footer', array(
+        'title' => 'Footer Text', // The title of section
+        'priority' => 70,
+    ));
+
+    $wp_customize->add_setting('tatva_footer_footer_text', array(
+        'default' => '',
+    ));
+    $wp_customize->add_control(new tatva_customize_textarea_control($wp_customize, 'tatva_footer_footer_text', array(
+        'section' => 'tatva_footer', // id of section to which the setting belongs
+        'settings' => 'tatva_footer_footer_text',
+    )));
+
+    
+    // Add custom CSS section
+    $wp_customize->add_section('tatva_custom_css', array(
+        'title' => 'Custom CSS', // The title of section
+        'priority' => 80,
+    ));
+    
+    $wp_customize->add_setting('tatva_custom_css');
+    
+    $wp_customize->add_control(new tatva_customize_textarea_control($wp_customize, 'tatva_custom_css', array(
+        'section' => 'tatva_custom_css', // id of section to which the setting belongs
+        'settings' => 'tatva_custom_css', 
+    )));
 
     // Add postMessage for EDD store title and description
     $wp_customize->get_setting('tatva_edd_store_archives_title')->transport = 'postMessage';
@@ -286,21 +314,6 @@ function tatva_customize_register($wp_customize) {
 
 add_action('customize_register', 'tatva_customize_register');
 
-/**
- * Sanitize the Featured Content layout value.
- *
- * @since Tatva 1.0
- *
- * @param string $layout Layout type.
- * @return string Filtered layout type (grid|slider).
- */
-function tatva_sanitize_layout($layout) {
-    if (!in_array($layout, array('grid', 'slider'))) {
-        $layout = 'grid';
-    }
-
-    return $layout;
-}
 
 /**
  * Bind JS handlers to make Theme Customizer preview reload changes asynchronously.
@@ -313,29 +326,16 @@ function tatva_customize_preview_js() {
 
 add_action('customize_preview_init', 'tatva_customize_preview_js');
 
-/**
- * Add contextual help to the Themes and Post edit screens.
- *
- * @since Tatva 1.0
- *
- * @return void
- */
-function tatva_contextual_help() {
-    if ('admin_head-edit.php' === current_filter() && 'post' !== $GLOBALS['typenow']) {
-        return;
-    }
 
-    get_current_screen()->add_help_tab(array(
-        'id' => 'tatva',
-        'title' => __('Tatva', 'tatva'),
-        'content' =>
-        '<ul>' .
-        '<li>' . sprintf(__('The home page features your choice of up to 6 posts prominently displayed in a grid or slider, controlled by the <a href="%1$s">featured</a> tag; you can change the tag and layout in <a href="%2$s">Appearance &rarr; Customize</a>. If no posts match the tag, <a href="%3$s">sticky posts</a> will be displayed instead.', 'tatva'), admin_url('/edit.php?tag=featured'), admin_url('customize.php'), admin_url('/edit.php?show_sticky=1')) . '</li>' .
-        '<li>' . sprintf(__('Enhance your site design by using <a href="%s">Featured Images</a> for posts you&rsquo;d like to stand out (also known as post thumbnails). This allows you to associate an image with your post without inserting it. Tatva uses featured images for posts and pages&mdash;above the title&mdash;and in the Featured Content area on the home page.', 'tatva'), 'http://codex.wordpress.org/Post_Thumbnails#Setting_a_Post_Thumbnail') . '</li>' .
-        '<li>' . sprintf(__('For an in-depth tutorial, and more tips and tricks, visit the <a href="%s">Tatva documentation</a>.', 'tatva'), 'http://codex.wordpress.org/Twenty_Fourteen') . '</li>' .
-        '</ul>',
-    ));
+function tatva_header_output() {
+    ?>
+    <!--Customizer CSS--> 
+    <style type="text/css">
+    <?php echo esc_attr(get_theme_mod('tatva_custom_css')); ?>
+    </style> 
+    <!--/Customizer CSS-->
+    <?php
 }
 
-add_action('admin_head-themes.php', 'tatva_contextual_help');
-add_action('admin_head-edit.php', 'tatva_contextual_help');
+// Output custom CSS to live site
+add_action('wp_head', 'tatva_header_output');
