@@ -13,22 +13,23 @@ Tatva is your basic building block for creating beautiful, responsive custom the
 
 == Description ==
 
-Tatva is your basic building block for creating beautiful, responsive custom themes. It's not a convoluted or confusing framework that's hard to learn or
-even harder to modify. It's a simple and elegant starter theme built on HTML5 & CSS3. It's based on the Underscores (_s) and TwentyTwelve themes, so that
-means not only is it flexible, it's extremely easy to customise. There's no need to make a child theme (unless you really want to), just dig in to the
-code & use it to give yourself a kickstart in creating your next awesome theme.
+Tatva is your basic building block for creating beautiful, responsive custom themes. It has been built only with
+required features and options. There are no confusing theme options and settings. Simply install and activate the theme.
+Front page is completely widgetized so it gives the users complete control over the content. 
+There's built in support for Easy Digital Downloads plugin which allows users to setup their online store and
+start selling digital products easily. 
 
 Its base is a responsive, 12 column grid. It uses Normalize to make sure that browsers render all elements more consistently and Mordernizr for
 detecting HTML5 and CSS3 browser capabilities along with some default stylings from HTML5 Boilerplate.
 
-It incorporates the [Options Framework](http://wptheming.com/options-framework-theme/) by Devin Price to make it super easy to add custom Theme Options
+It uses Theme customizer to implement all theme customization features. 
 as well as the gorgeous [Font Awesome](http://fortawesome.github.io/Font-Awesome/) icon font by Dave Gandy.
 
 The main navigation uses the standard WordPress menu. Support for dropdown menus is inluded by default. If you'd like to envoke a button toggle for the main navigation menu on small screens, simply uncomment the two lines from the tatva_scripts_styles() function within functions.php to register and enqueue the necessary javascript file, and BAM! You're done!
 
 Templates
 
-Tatva includes a set of your most common theme templates, including templates for Full-Width pages, Left Sidebar, Right Sidebar (default), Front-Page, Tag,
+Tatva includes a set of your most common theme templates, including templates for Full-Width pages, Front-page, EDD Store, Right Sidebar (default), Front-Page, Tag,
 Categories, Authors, Search, Posts Archive and 404.
 
 Post Formats
@@ -40,32 +41,34 @@ Widgets
 
 Widgets are a great way of adding extra content to your site and Tatva has a whole assortment of them.
 
-Main Sidebar: Appears in the sidebar on posts and pages except the optional Homepage template, which has its own widgets
-Blog Sidebar: Appears in the sidebar on the blog and archive pages only
-Single Post Sidebar: Appears in the sidebar on single posts only
-Page Sidebar: Appears in the sidebar on pages only
+Main Sidebar: Appears on all the pages, posts, archives
+Header Widget: Appears in the header right section
+Shop Sidebar: Appears on single product pages
 
-The Front Page Banner Widget areas are dynamic! You can use up to two of these and they'll magically space themselves out evenly. For example, if you 
-only add widgets into the First Front Page Banner Widget Area, then it will expand the full width of the page. However, if you add widgets to both Front 
-Page Banner Widget areas, they'll magically space themselves out over two equal columns.
-First Front Page Banner Widget: Appears in the banner area on the Front Page
-Second Front Page Banner Widget: Appears in the banner area on the Front Page
+The Home Featured Left & Right Widget areas are dynamic! You can use up to two of these and they'll magically space themselves out evenly. For example, if you 
+only add widgets into the Home Featured Left Widget Area, then it will expand the full width of the page. However, if you add widgets to both  
+Featured Left & Right Widget areas, they'll magically space themselves out over two equal columns.
+Home Featured Left Widget: Appears in the left featured area on the Front Page
+Home Featured Right Widget: Appears in the right featured area on the Front Page
 
 The Front Page Widget areas are dynamic! You can use up to four of these and they'll magically space themselves out evenly. For example, if you only add 
-widgets into the First Front Page Widget Area, then it will expand the full width of the page. However, if you add widgets to all four Front Page Widget 
+widgets into the Home #1  Widget Area, then it will expand the full width of the page. However, if you add widgets to all four Front Page Widget 
 Areas, they'll magically space themselves out over four equal columns.
-First Homepage Widget Area: Appears when using the optional homepage template with a page set as Static Front Page
-Second Homepage Widget Area: Appears when using the optional homepage template with a page set as Static Front Page
-Third Homepage Widget Area: Appears when using the optional homepage template with a page set as Static Front Page
-Fourth Homepage Widget Area: Appears when using the optional homepage template with a page set as Static Front Page
+Home #1 Widget Area: Appears when using the optional frontpage template with a page set as Static Front Page
+Home #2 Widget Area: Appears when using the optional frontpage template with a page set as Static Front Page
+Home #3 Widget Area: Appears when using the optional frontpage template with a page set as Static Front Page
+Home #4 Widget Area: Appears when using the optional frontpage template with a page set as Static Front Page
+
+The Home Testimonial widet area appears below Home #1-#4 widget areas and can be used for displaying 
+client testimonials or any other kind of content.
 
 The Footer Widget areas are dynamic! You can use up to four of these and they'll magically space themselves out evenly. For example, if you only add 
-widgets into the First Footer Widget Area, then it will expand the full width of the page. However, if you add widgets to all four Footer Widget Areas, 
+widgets into the Footer #1 Widget Area, then it will expand the full width of the page. However, if you add widgets to all four Footer Widget Areas, 
 they'll magically space themselves out over four equal columns.
-First Footer Widget Area: Appears in the footer sidebar
-Second Footer Widget Area: Appears in the footer sidebar
-Third Footer Widget Area: Appears in the footer sidebar
-Fourth Footer Widget Area: Appears in the footer sidebar
+Footer #1 Widget Area: Appears in the footer sidebar
+Footer #2 Widget Area: Appears in the footer sidebar
+Footer #3 Widget Area: Appears in the footer sidebar
+Footer #4 Widget Area: Appears in the footer sidebar
 
 Custom Header
 
@@ -75,13 +78,15 @@ Custom Background
 
 The background pattern can be changed using the Custom Background feature. You change this in the Appearance > Background menu option
 
-Theme Options
+Theme Customizer
 
-Additional Theme Options can be found in the Appearance > Theme Options menu option. These include options for:
-Specifying the URL's for various social media networks
-Specifying the banner background image & color
-Specifying the footer color
+Additional Theme Customization Options can be found in the Appearance > Customize menu option. These include options for:
+Specifying site layout and color scheme
+Enabling featured posts on front page
+Enabling featured products on front page
+Specifying EDD store page and archive settings
 Changing the footer credit text
+Adding custom CSS
 
 
 == Installation ==
@@ -151,13 +156,12 @@ Free Software Foundation; either version 2 of the License, or (at your option) a
 
 Tatva utilises the following awesomeness:
 
-[Options Framework](http://wptheming.com/options-framework-theme), which is licensed under the GPLv2 License
 [Modernizr](http://modernizr.com), which is licensed under the MIT license
 [Normalize.css](https://github.com/necolas/normalize.css), which is licensed under the MIT license
 [jQuery Validation](http://bassistance.de/jquery-plugins/jquery-plugin-validation) which is dual licensed under the MIT license and GPL licenses
 [Font Awesome](http://fortawesome.github.io/Font-Awesome) icon font, which is licensed under SIL Open Font License and MIT License
-[Open Sans font](http://www.google.com/fonts/specimen/PT+Sans), which is licensed under SIL Open Font License 1.1
-[Merriweather font](http://www.google.com/fonts/specimen/Merriweather), which is licensed under SIL Open Font License 1.1
+[Open Sans font](http://www.google.com/fonts/specimen/Open+Sans), which is licensed under SIL Open Font License 1.1
+[Montserrat font](http://www.google.com/fonts/specimen/Montserrat), which is licensed under SIL Open Font License 1.1
 
 = 1.0 =
 - Initial version
