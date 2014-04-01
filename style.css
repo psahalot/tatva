@@ -2811,6 +2811,12 @@ img#wpstats {
         background:#dd5d65;
 }
 
+.tatva-red ::selection
+{
+    background:#ef7a7a;
+    color:#fff;
+}
+
 .tatva-red .main-navigation ul ul a
 {
     color:#fff;
@@ -2858,6 +2864,13 @@ img#wpstats {
 {
     color:#fff;
 }
+
+.tatva-green ::selection
+{
+    background:#77dfba;
+    color:#fff;
+}
+
 .tatva-green .footer-wrap,
 .tatva-green .nav-container
 {
@@ -2904,6 +2917,12 @@ img#wpstats {
 
 .tatva-pink .main-navigation ul ul a
 {
+    color:#fff;
+}
+
+.tatva-pink ::selection
+{
+    background:#ed409f;
     color:#fff;
 }
 
@@ -2955,6 +2974,13 @@ img#wpstats {
 {
     color:#fff;
 }
+
+.tatva-gray ::selection
+{
+    background:#8e8e8e;
+    color:#fff;
+}
+
 .tatva-gray .footer-wrap,
 .tatva-gray .nav-container
 {
@@ -3001,6 +3027,12 @@ img#wpstats {
 
 .tatva-brown .main-navigation ul ul a
 {
+    color:#fff;
+}
+
+.tatva-brown ::selection
+{
+    background:#875608;
     color:#fff;
 }
 
@@ -3052,6 +3084,12 @@ img#wpstats {
     color:#fff;
 }
 
+.tatva-purple ::selection
+{
+    background:#a678d3;
+    color:#fff;
+}
+
 .tatva-purple .footer-wrap,
 .tatva-purple .nav-container
 {
@@ -3097,6 +3135,12 @@ img#wpstats {
 
 .tatva-orange .main-navigation ul ul a
 {
+    color:#fff;
+}
+
+.tatva-orange ::selection
+{
+    background:#fa7f53;
     color:#fff;
 }
 
@@ -3317,6 +3361,11 @@ img#wpstats {
         .full-width .main-content{
             padding-left:2rem;
         }
+        
+        .full-width.page-template-page-templatesedd-store-php .main-content{
+            padding-left:0;
+        }
+       
         
         .boxed .main-content{
             padding:20px 0;
