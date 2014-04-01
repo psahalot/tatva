@@ -48,7 +48,7 @@
                                                             <?php if(function_exists('edd_price')) { ?>
                                                                     <div class="product-buttons">
                                                                             <?php if(!edd_has_variable_prices(get_the_ID())) { ?>
-                                                                                    <?php // echo edd_get_purchase_link(get_the_ID(), 'Add to Cart', 'button'); ?>
+                                                                                    <?php echo edd_get_purchase_link(get_the_ID(), 'Add to Cart', 'button'); ?>
                                                                             <?php } ?>
                                                                             <a href="<?php the_permalink(); ?>" class="product-details-link">View Details</a>
                                                                     </div><!--end .product-buttons-->
@@ -60,7 +60,7 @@
                                     <?php endwhile; ?>
                             <?php else : ?>
 
-                                    <h2 class="center">Not Found</h2>
+                                    <h2 class="center"><?php _e('Not Found'); ?></h2>
                                     <p class="center">Sorry, but you are looking for something that isn't here.</p>
                                     <?php get_search_form(); ?>
 
