@@ -8,7 +8,6 @@
 
 require( get_stylesheet_directory() . '/inc/customizer.php' ); // new customizer options
 include( get_stylesheet_directory() . '/inc/edd-config.php' ); // EDD config file 
-include( get_stylesheet_directory() . '/inc/widgets/social-icons/simple-social-icons.php' ); // Social Icons widget 
 
 /* Include plugin activation file to install plugins */
 include get_template_directory() . '/inc/plugin-activation/plugin-details.php';
@@ -53,7 +52,7 @@ if ( ! function_exists( 'tatva_setup' ) ) {
 		 * If you're building a theme based on Tatva, use a find and replace
 		 * to change 'tatva' to the name of your theme in all the template files
 		 */
-		load_theme_textdomain( 'tatva', trailingslashit( get_template_directory() ) . 'languages' );
+		load_theme_textdomain( 'tatva', trailingslashit( get_template_directory_uri() ) . 'languages' );
 
 		// This theme styles the visual editor with editor-style.css to match the theme style.
 		add_editor_style();
@@ -385,7 +384,7 @@ function tatva_scripts_styles() {
 
 	// Register and enqueue our icon font
 	// We're using the awesome Font Awesome icon font. http://fortawesome.github.io/Font-Awesome
-	wp_register_style( 'fontawesome', trailingslashit( get_template_directory_uri() ) . 'css/font-awesome.min.css' , array(), '4.0.3', 'all' );
+	wp_register_style( 'fontawesome', trailingslashit( get_template_directory_uri() ) . 'assets/css/font-awesome.min.css' , array(), '4.0.3', 'all' );
 	wp_enqueue_style( 'fontawesome' );
 ;
 
@@ -412,7 +411,7 @@ function tatva_scripts_styles() {
 	 */
 
 	// Load Modernizr at the top of the document, which enables HTML5 elements and feature detects
-	wp_register_script( 'modernizr', trailingslashit( get_template_directory_uri() ) . 'js/modernizr-2.7.1-min.js', array(), '2.7.1', false );
+	wp_register_script( 'modernizr', trailingslashit( get_template_directory_uri() ) . 'assets/js/modernizr-2.7.1-min.js', array(), '2.7.1', false );
 	wp_enqueue_script( 'modernizr' );
 
 	// Adds JavaScript to pages with the comment form to support sites with threaded comments (when in use)
@@ -424,8 +423,8 @@ function tatva_scripts_styles() {
 	// Using the 1.11.0pre version as it fixes an error that causes the email validation to fire immediately when text is entered in the field
 	// You can change the validation error messages below
 	if ( is_singular() && comments_open() ) {
-		wp_register_script( 'validate', trailingslashit( get_template_directory_uri() ) . 'js/jquery.validate.min.1.11.0pre.js', array( 'jquery' ), '1.11.0', true );
-		wp_register_script( 'commentvalidate', trailingslashit( get_template_directory_uri() ) . 'js/comment-form-validation.js', array( 'jquery', 'validate' ), '1.11.0', true );
+		wp_register_script( 'validate', trailingslashit( get_template_directory_uri() ) . 'assets/js/jquery.validate.min.1.11.0pre.js', array( 'jquery' ), '1.11.0', true );
+		wp_register_script( 'commentvalidate', trailingslashit( get_template_directory_uri() ) . 'assets/js/comment-form-validation.js', array( 'jquery', 'validate' ), '1.11.0', true );
 
 		wp_enqueue_script( 'commentvalidate' );
 		wp_localize_script( 'commentvalidate', 'comments_object', array(
@@ -437,7 +436,7 @@ function tatva_scripts_styles() {
 	}
 
 	// Include this script to envoke a button toggle for the main navigation menu on small screens
-	wp_register_script( 'small-menu', trailingslashit( get_template_directory_uri() ) . 'js/small-menu.js', array( 'jquery' ), '20130130', true );
+	wp_register_script( 'small-menu', trailingslashit( get_template_directory_uri() ) . 'assets/js/small-menu.js', array( 'jquery' ), '20130130', true );
 	wp_enqueue_script( 'small-menu' );
 
 }
@@ -895,8 +894,6 @@ add_filter( 'meta_content', 'convert_smilies' );
 add_filter( 'meta_content', 'convert_chars'  );
 add_filter( 'meta_content', 'wpautop' );
 add_filter( 'meta_content', 'shortcode_unautop'  );
-
-
 
 
 add_action( 'after_setup_theme', 'tgm_envira_define_license_key' );
