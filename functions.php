@@ -8,7 +8,6 @@
 
 require( get_stylesheet_directory() . '/inc/customizer.php' ); // new customizer options
 include( get_stylesheet_directory() . '/inc/edd-config.php' ); // EDD config file 
-include( get_stylesheet_directory() . '/inc/widgets/image-widget/image-widget.php' ); // Image widget 
 include( get_stylesheet_directory() . '/inc/widgets/social-icons/simple-social-icons.php' ); // Social Icons widget 
 
 /* Include plugin activation file to install plugins */
@@ -20,9 +19,7 @@ if (!class_exists('tatva_SL_Theme_Updater')) {
     include( dirname(__FILE__) . '/inc/theme-updater.php' );
 }
 
-
 // configuration file for theme licensing 
-
 // theme updater and licensing
 
 include(get_stylesheet_directory() . '/inc/theme-updater-config.php');
@@ -79,9 +76,6 @@ if ( ! function_exists( 'tatva_setup' ) ) {
                 
                 // hard crop store front and taxonomy product images thumbnail for downloads
                 add_image_size( 'product-image-thumb', 370, 243, true );
-
-                // add support for widget customizer
-                add_theme_support( 'widget-customizer' );
                 
 		// This theme uses wp_nav_menu() in one location
 		register_nav_menus( array(
@@ -389,19 +383,11 @@ function tatva_scripts_styles() {
 	 * Register and enqueue our stylesheets
 	 */
 
-	// Start off with a clean base by using normalise. If you prefer to use a reset stylesheet or something else, simply replace this
-	wp_register_style( 'normalize', trailingslashit( get_template_directory_uri() ) . 'css/normalize.css' , array(), '2.1.3', 'all' );
-	wp_enqueue_style( 'normalize' );
-
 	// Register and enqueue our icon font
 	// We're using the awesome Font Awesome icon font. http://fortawesome.github.io/Font-Awesome
 	wp_register_style( 'fontawesome', trailingslashit( get_template_directory_uri() ) . 'css/font-awesome.min.css' , array(), '4.0.3', 'all' );
 	wp_enqueue_style( 'fontawesome' );
-
-	// Our styles for setting up the grid.
-	// If you prefer to use a different grid system, simply replace this and perform a find/replace in the php for the relevant styles. I'm nice like that!
-	wp_register_style( 'gridsystem', trailingslashit( get_template_directory_uri() ) . 'css/grid.css' , array(), '1.0.0', 'all' );
-	wp_enqueue_style( 'gridsystem' );
+;
 
 	/*
 	 * Load our Google Fonts.
@@ -418,7 +404,7 @@ function tatva_scripts_styles() {
 	}
 
 	// Enqueue the default WordPress stylesheet
-	wp_enqueue_style( 'style', get_stylesheet_uri(), array(), '1.2.3', 'all' );
+	wp_enqueue_style( 'style', get_stylesheet_uri(), array(), '1.0', 'all' );
 
 
 	/**

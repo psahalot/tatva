@@ -4,13 +4,13 @@
  * Easy Digital Downloads.
  *
  * @package WordPress
- * @subpackage Tatva Sample Theme
+ * @subpackage Tatva Theme
  */
 
 // This is the URL our updater / license checker pings. This should be the URL of the site with Tatva installed
 define('IDEABOX_STORE_URL', 'http://ideaboxthemes.com'); // add your own unique prefix to prevent conflicts
 // The name of your product. This should match the download name in Tatva exactly
-define('IDEABOX_THEME_NAME', 'smart-shop-wordpress-theme'); // add your own unique prefix to prevent conflicts
+define('IDEABOX_THEME_NAME', 'tatva-wordpress-theme'); // add your own unique prefix to prevent conflicts
 
 function ideabox_theme_updater() {
 
