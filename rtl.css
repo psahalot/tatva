@@ -186,6 +186,9 @@ td {
     float: left;
 }
 
+.site-content article {
+    margin-right: 0; 
+}
 
 /* ==========================================================================
    Post Formats
