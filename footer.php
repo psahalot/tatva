@@ -45,14 +45,18 @@
         </footer> <!-- /.site-footer.row -->
 <?php } ?>
 
-
-
     <div class="footer-wrap">
         <?php if (get_theme_mod('tatva_footer_footer_text') == '') { ?>
-            <div class="row smallprint"><p><a href="http://ideaboxthemes.com/themes/tatva-wordpress-theme/"><?php _e('Tatva WordPress theme by IdeaBox', 'tatva'); ?></a></p></div>
-<?php } else { ?>   
-            <div class="row smallprint"><?php echo wpautop(get_theme_mod('tatva_footer_footer_text')); ?></div>
-<?php } ?> 
+            <div class="row smallprint">
+                <p>
+                    <a href="<?php $my_theme = wp_get_theme(); echo $my_theme->get( 'ThemeURI' ); ?>">
+                        <?php _e('Tatva WordPress theme by IdeaBox', 'tatva'); ?>
+                    </a>
+                </p>
+            </div>
+        <?php } else { ?>   
+                    <div class="row smallprint"><?php echo wpautop(get_theme_mod('tatva_footer_footer_text')); ?></div>
+        <?php } ?> 
     </div> <!-- /.footer-wrap -->
 </div> <!-- /.footercontainer -->
 

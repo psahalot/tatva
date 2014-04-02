@@ -38,7 +38,7 @@ function ideabox_theme_license_page() {
     $status = get_option('ideabox_theme_license_key_status');
     ?>
     <div class="wrap">
-        <h2><?php _e('Theme License Options'); ?></h2>
+        <h2><?php _e('Theme License Options','tatva'); ?></h2>
         <form method="post" action="options.php">
 
     <?php settings_fields('ideabox_theme_license'); ?>
@@ -47,27 +47,27 @@ function ideabox_theme_license_page() {
                 <tbody>
                     <tr valign="top">
                         <th scope="row" valign="top">
-    <?php _e('License Key'); ?>
+    <?php _e('License Key','tatva'); ?>
                         </th>
                         <td>
                             <input id="ideabox_theme_license_key" name="ideabox_theme_license_key" type="text" class="regular-text" value="<?php esc_attr($license); ?>" />
-                            <label class="description" for="ideabox_theme_license_key"><?php _e('Enter your license key'); ?></label>
+                            <label class="description" for="ideabox_theme_license_key"><?php _e('Enter your license key','tatva'); ?></label>
                         </td>
                     </tr>
     <?php if (false !== $license) { ?>
                         <tr valign="top">
                             <th scope="row" valign="top">
-        <?php _e('Activate License'); ?>
+        <?php _e('Activate License','tatva'); ?>
                             </th>
                             <td>
         <?php if ($status !== false && $status == 'valid') { ?>
-                                    <span style="color:green;"><?php _e('active'); ?></span>
+                                    <span style="color:green;"><?php _e('active','tatva'); ?></span>
                                     <?php wp_nonce_field('tatva_sample_nonce', 'tatva_sample_nonce'); ?>
-                                    <input type="submit" class="button-secondary" name="tatva_theme_license_deactivate" value="<?php _e('Deactivate License'); ?>"/>
+                                    <input type="submit" class="button-secondary" name="tatva_theme_license_deactivate" value="<?php _e('Deactivate License','tatva'); ?>"/>
                                 <?php } else {
                                     wp_nonce_field('tatva_sample_nonce', 'tatva_sample_nonce');
                                     ?>
-                                    <input type="submit" class="button-secondary" name="tatva_theme_license_activate" value="<?php _e('Activate License'); ?>"/>
+                                    <input type="submit" class="button-secondary" name="tatva_theme_license_activate" value="<?php _e('Activate License','tatva'); ?>"/>
                                 <?php } ?>
                             </td>
                         </tr>
