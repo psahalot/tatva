@@ -93,8 +93,8 @@ get_header();
                 </div>
             <?php else : ?>
 
-                <h2 class="center">Not Found</h2>
-                <p class="center">Sorry, but you are looking for something that isn't here.</p>
+                <h2 class="center"><?php esc_html_e('Not Found','tatva'); ?></h2>
+                <p class="center"><?php esc_html_e('Sorry, but you are looking for something that is not here','tatva'); ?></p>
                 <?php get_search_form(); ?>
 
             <?php endif; ?>
