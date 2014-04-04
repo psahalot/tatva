@@ -48,9 +48,6 @@ if (class_exists('Easy_Digital_Downloads')) {
                                     <div class="home-product-info">
                                             <?php if (function_exists('edd_price')) { ?>
                                             <div class="product-buttons">
-                                                <?php if (!edd_has_variable_prices(get_the_ID())) { ?>
-                                                    <?php echo edd_get_purchase_link(get_the_ID(), 'Add to Cart', 'button'); ?>
-                    <?php } ?>
                                                 <a href="<?php the_permalink(); ?>" class="product-details-link">View Details</a>
                                             </div><!--end .product-buttons-->
                 <?php } ?>
