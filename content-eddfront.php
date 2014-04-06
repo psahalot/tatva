@@ -48,7 +48,6 @@ if (class_exists('Easy_Digital_Downloads')) {
                                     <div class="home-product-info">
                                             <?php if (function_exists('edd_price')) { ?>
                                             <div class="product-buttons">
-                                                
                                                 <a href="<?php the_permalink(); ?>" class="product-details-link">View Details</a>
                                             </div><!--end .product-buttons-->
                 <?php } ?>
