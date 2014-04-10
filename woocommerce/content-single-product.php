@@ -11,7 +11,7 @@
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 ?>
-
+<div class="site-container">
 <?php
 	/**
 	 * woocommerce_before_single_product hook
@@ -68,7 +68,16 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 	?>
 
 	<meta itemprop="url" content="<?php the_permalink(); ?>" />
-
+        
+        <?php
+		/**
+		 * woocommerce_sidebar hook
+		 *
+		 * @hooked woocommerce_get_sidebar - 10
+		 */
+		do_action( 'woocommerce_sidebar' );
+	?>
 </div><!-- #product-<?php the_ID(); ?> -->
 
+</div>
 <?php do_action( 'woocommerce_after_single_product' ); ?>
