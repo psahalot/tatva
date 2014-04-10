@@ -11,19 +11,19 @@
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
-global $post;
 $rating = intval( get_comment_meta( $comment->comment_ID, 'rating', true ) );
 ?>
 <li itemprop="reviews" itemscope itemtype="http://schema.org/Review" <?php comment_class(); ?> id="li-comment-<?php comment_ID() ?>">
+
 	<div id="comment-<?php comment_ID(); ?>" class="comment_container">
 
 		<?php echo get_avatar( $comment, apply_filters( 'woocommerce_review_gravatar_size', '60' ), '', get_comment_author() ); ?>
 
 		<div class="comment-text">
 
-			<?php if ( get_option('woocommerce_enable_review_rating') == 'yes' ) : ?>
+			<?php if ( $rating && get_option( 'woocommerce_enable_review_rating' ) == 'yes' ) : ?>
 
-				<div itemprop="reviewRating" itemscope itemtype="http://schema.org/Rating" class="star-rating primary-color" title="<?php echo sprintf( __( 'Rated %d out of 5', 'woocommerce' ), $rating ) ?>">
+				<div itemprop="reviewRating" itemscope itemtype="http://schema.org/Rating" class="star-rating" title="<?php echo sprintf( __( 'Rated %d out of 5', 'woocommerce' ), $rating ) ?>">
 					<span style="width:<?php echo ( $rating / 5 ) * 100; ?>%"><strong itemprop="ratingValue"><?php echo $rating; ?></strong> <?php _e( 'out of 5', 'woocommerce' ); ?></span>
 				</div>
 

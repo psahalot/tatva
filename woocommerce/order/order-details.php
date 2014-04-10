@@ -35,11 +35,11 @@ $order = new WC_Order( $order_id );
 	</tfoot>
 	<tbody>
 		<?php
-		if (sizeof($order->get_items())>0) {
+		if ( sizeof( $order->get_items() ) > 0 ) {
 
 			foreach( $order->get_items() as $item ) {
 				$_product     = apply_filters( 'woocommerce_order_item_product', $order->get_product_from_item( $item ), $item );
-				$item_meta    = new WC_Order_Item_Meta( $item['item_meta'] );
+				$item_meta    = new WC_Order_Item_Meta( $item['item_meta'], $_product );
 
 				?>
 				<tr class="<?php echo esc_attr( apply_filters( 'woocommerce_order_item_class', 'order_item', $item, $order ) ); ?>">
@@ -93,14 +93,6 @@ $order = new WC_Order( $order_id );
 
 <?php do_action( 'woocommerce_order_details_after_order_table', $order ); ?>
 
-<?php if ( get_option('woocommerce_allow_customers_to_reorder') == 'yes' && $order->status=='completed' ) : ?>
-	<p class="order-again">
-		<a href="<?php echo esc_url( $woocommerce->nonce_url( 'order_again', add_query_arg( 'order_again', $order->id, add_query_arg( 'order', $order->id, get_permalink( woocommerce_get_page_id( 'view_order' ) ) ) ) ) ); ?>" class="button"><?php _e( 'Order Again', 'woocommerce' ); ?></a>
-	</p>
-<?php endif; ?>
-
-<?php do_action( 'woocommerce_order_details_after_order_table', $order ); ?>
-
 <header>
 	<h2><?php _e( 'Customer details', 'woocommerce' ); ?></h2>
 </header>
@@ -116,9 +108,9 @@ $order = new WC_Order( $order_id );
 
 <?php if ( get_option( 'woocommerce_ship_to_billing_address_only' ) === 'no' && get_option( 'woocommerce_calc_shipping' ) !== 'no' ) : ?>
 
-<div class="row addresses">
+<div class="col2-set addresses">
 
-	<div class="col-md-6">
+	<div class="col-1">
 
 <?php endif; ?>
 
@@ -127,7 +119,7 @@ $order = new WC_Order( $order_id );
 		</header>
 		<address><p>
 			<?php
-				if (!$order->get_formatted_billing_address()) _e( 'N/A', 'woocommerce' ); else echo $order->get_formatted_billing_address();
+				if ( ! $order->get_formatted_billing_address() ) _e( 'N/A', 'woocommerce' ); else echo $order->get_formatted_billing_address();
 			?>
 		</p></address>
 
@@ -135,14 +127,14 @@ $order = new WC_Order( $order_id );
 
 	</div><!-- /.col-1 -->
 
-	<div class="col-md-6">
+	<div class="col-2">
 
 		<header class="title">
 			<h3><?php _e( 'Shipping Address', 'woocommerce' ); ?></h3>
 		</header>
 		<address><p>
 			<?php
-				if (!$order->get_formatted_shipping_address()) _e( 'N/A', 'woocommerce' ); else echo $order->get_formatted_shipping_address();
+				if ( ! $order->get_formatted_shipping_address() ) _e( 'N/A', 'woocommerce' ); else echo $order->get_formatted_shipping_address();
 			?>
 		</p></address>
 

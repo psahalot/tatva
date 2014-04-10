@@ -15,7 +15,7 @@ $attachment_ids = $product->get_gallery_attachment_ids();
 
 if ( $attachment_ids ) {
 	?>
-	<div class="product_thumbnails"><?php
+	<div class="thumbnails"><?php
 
 		$loop = 0;
 		$columns = apply_filters( 'woocommerce_product_thumbnails_columns', 3 );
@@ -39,7 +39,7 @@ if ( $attachment_ids ) {
 			$image_class = esc_attr( implode( ' ', $classes ) );
 			$image_title = esc_attr( get_the_title( $attachment_id ) );
 
-			echo apply_filters( 'woocommerce_single_product_image_thumbnail_html', sprintf( '<a href="%s" class="%s" title="%s"  rel="lightbox[product-gallery]">%s</a>', $image_link, $image_class, $image_title, $image ), $attachment_id, $post->ID, $image_class );
+			echo apply_filters( 'woocommerce_single_product_image_thumbnail_html', sprintf( '<a href="%s" class="%s" title="%s" data-rel="prettyPhoto[product-gallery]">%s</a>', $image_link, $image_class, $image_title, $image ), $attachment_id, $post->ID, $image_class );
 
 			$loop++;
 		}

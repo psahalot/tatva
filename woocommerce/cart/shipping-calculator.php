@@ -17,9 +17,9 @@ if ( get_option( 'woocommerce_enable_shipping_calc' ) === 'no' || ! WC()->cart->
 
 <?php do_action( 'woocommerce_before_shipping_calculator' ); ?>
 
-<form class="shipping_calculator col-md-5" action="<?php echo esc_url( WC()->cart->get_cart_url() ); ?>" method="post">
+<form class="shipping_calculator" action="<?php echo esc_url( WC()->cart->get_cart_url() ); ?>" method="post">
 
-	<h3><a href="#" class="shipping-calculator-button"><?php _e( 'Calculate Shipping', 'woocommerce' ); ?></a></h3>
+	<h2><a href="#" class="shipping-calculator-button"><?php _e( 'Calculate Shipping', 'woocommerce' ); ?></a></h2>
 
 	<section class="shipping-calculator-form">
 
@@ -80,10 +80,9 @@ if ( get_option( 'woocommerce_enable_shipping_calc' ) === 'no' || ! WC()->cart->
 				<input type="text" class="input-text" value="<?php echo esc_attr( WC()->customer->get_shipping_postcode() ); ?>" placeholder="<?php _e( 'Postcode / Zip', 'woocommerce' ); ?>" name="calc_shipping_postcode" id="calc_shipping_postcode" />
 			</p>
 
-
 		<?php endif; ?>
 
-		<p><button type="submit" name="calc_shipping" value="1" class="button kad-btn kad-btn-primary"><?php _e( 'Update Totals', 'woocommerce' ); ?></button></p>
+		<p><button type="submit" name="calc_shipping" value="1" class="button"><?php _e( 'Update Totals', 'woocommerce' ); ?></button></p>
 
 		<?php wp_nonce_field( 'woocommerce-cart' ); ?>
 	</section>

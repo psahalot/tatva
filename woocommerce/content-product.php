@@ -11,7 +11,7 @@
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
-global $product, $woocommerce_loop, $virtue;
+global $product, $woocommerce_loop;
 
 // Store loop count we're currently on
 if ( empty( $woocommerce_loop['loop'] ) )
@@ -20,7 +20,7 @@ if ( empty( $woocommerce_loop['loop'] ) )
 // Store column count for displaying the grid
 if ( empty( $woocommerce_loop['columns'] ) )
 	$woocommerce_loop['columns'] = apply_filters( 'loop_shop_columns', 4 );
-if ($woocommerce_loop['columns'] == '3'){ $itemsize = 'tcol-md-4 tcol-sm-4 tcol-xs-6 tcol-ss-12'; $productimgwidth = 365;} else {$itemsize = 'tcol-md-3 tcol-sm-4 tcol-xs-6 tcol-ss-12'; $productimgwidth = 268;}
+
 // Ensure visibility
 if ( ! $product || ! $product->is_visible() )
 	return;
@@ -30,23 +30,16 @@ $woocommerce_loop['loop']++;
 
 // Extra post classes
 $classes = array();
-
-$classes[] = 'grid_item';
-$classes[] = 'product_item';
-$classes[] = 'clearfix';
-if(isset($virtue['product_img_resize']) && $virtue['product_img_resize'] == 0) {
-	$resizeimage = 0;
-} else {
-	$resizeimage = 1;
-}
+if ( 0 == ( $woocommerce_loop['loop'] - 1 ) % $woocommerce_loop['columns'] || 1 == $woocommerce_loop['columns'] )
+	$classes[] = 'first';
+if ( 0 == $woocommerce_loop['loop'] % $woocommerce_loop['columns'] )
+	$classes[] = 'last';
 ?>
-<div class="<?php echo $itemsize;?> kad_product">
-	<div <?php post_class( $classes ); ?>>
-
+<li <?php post_class( $classes ); ?>>
 
 	<?php do_action( 'woocommerce_before_shop_loop_item' ); ?>
 
-	<a href="<?php the_permalink(); ?>" class="product_item_link">
+	<a href="<?php the_permalink(); ?>">
 
 		<?php
 			/**
@@ -55,41 +48,23 @@ if(isset($virtue['product_img_resize']) && $virtue['product_img_resize'] == 0) {
 			 * @hooked woocommerce_show_product_loop_sale_flash - 10
 			 * @hooked woocommerce_template_loop_product_thumbnail - 10
 			 */
-			//do_action( 'woocommerce_before_shop_loop_item_title' );
+			do_action( 'woocommerce_before_shop_loop_item_title' );
 		?>
-			<?php echo woocommerce_show_product_loop_sale_flash($post, $product); ?>
 
-			<?php // echo woocommerce_template_loop_product_thumbnail($post, $product, $size); ?>
-			<?php if($resizeimage == 1) { 
-					if ( has_post_thumbnail() ) {
-					$product_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' ); 
-					$product_image_url = $product_image[0]; 
-					$image_product = aq_resize($product_image_url, $productimgwidth, $productimgwidth, true);
-	            	if(empty($image_product)) {$image_product = $product_image_url;} ?> 
-	            	 <img width="<?php echo $productimgwidth;?>" height="<?php echo $productimgwidth;?>" src="<?php echo $image_product;?>" class="attachment-shop_catalog wp-post-image" alt="<?php the_title();?>">
-	            	 <?php } elseif ( woocommerce_placeholder_img_src() ) {
-		             echo woocommerce_placeholder_img( 'shop_catalog' );
-		             }  
-			} else { 
-				echo woocommerce_template_loop_product_thumbnail();
-         }?>
-             </a>
-		<div class="product_details">
-			<a href="<?php the_permalink(); ?>" class="product_item_link">
-			<h5><?php the_title(); ?></h5>
-			</a>
+		<h3><?php the_title(); ?></h3>
 
-			<div class="product_excerpt"><?php the_excerpt(); ?></div>
-		</div>
 		<?php
 			/**
 			 * woocommerce_after_shop_loop_item_title hook
 			 *
+			 * @hooked woocommerce_template_loop_rating - 5
 			 * @hooked woocommerce_template_loop_price - 10
 			 */
 			do_action( 'woocommerce_after_shop_loop_item_title' );
 		?>
 
+	</a>
+
 	<?php do_action( 'woocommerce_after_shop_loop_item' ); ?>
-	</div>
-</div>
+
+</li>
