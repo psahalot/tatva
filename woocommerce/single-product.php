@@ -12,7 +12,9 @@
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 get_header( 'shop' ); ?>
-
+<div id="maincontentcontainer">
+    <div class="site-content">
+        <div class="col grid_8_of_12">
 	<?php
 		/**
 		 * woocommerce_before_main_content hook
@@ -37,7 +39,7 @@ get_header( 'shop' ); ?>
 		 */
 		do_action( 'woocommerce_after_main_content' );
 	?>
-
+        </div>
 	<?php
 		/**
 		 * woocommerce_sidebar hook
@@ -46,5 +48,7 @@ get_header( 'shop' ); ?>
 		 */
 		do_action( 'woocommerce_sidebar' );
 	?>
+    </div>
+</div>
 
 <?php get_footer( 'shop' ); ?>

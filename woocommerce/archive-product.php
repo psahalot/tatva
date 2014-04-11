@@ -12,16 +12,18 @@
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 get_header( 'shop' ); ?>
-
-	<?php
-		/**
-		 * woocommerce_before_main_content hook
-		 *
-		 * @hooked woocommerce_output_content_wrapper - 10 (outputs opening divs for the content)
-		 * @hooked woocommerce_breadcrumb - 20
-		 */
-		do_action( 'woocommerce_before_main_content' );
-	?>
+<div id="maincontentcontainer">
+    <div class="site-content">
+        <div class="grid_12_of_12">
+            <?php
+                    /**
+                     * woocommerce_before_main_content hook
+                     *
+                     * @hooked woocommerce_output_content_wrapper - 10 (outputs opening divs for the content)
+                     * @hooked woocommerce_breadcrumb - 20
+                     */
+                    do_action( 'woocommerce_before_main_content' );
+            ?>
 
 		<?php if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
 
@@ -70,15 +72,16 @@ get_header( 'shop' ); ?>
 
 		<?php endif; ?>
 
-	<?php
-		/**
-		 * woocommerce_after_main_content hook
-		 *
-		 * @hooked woocommerce_output_content_wrapper_end - 10 (outputs closing divs for the content)
-		 */
-		do_action( 'woocommerce_after_main_content' );
-	?>
+                <?php
+                        /**
+                         * woocommerce_after_main_content hook
+                         *
+                         * @hooked woocommerce_output_content_wrapper_end - 10 (outputs closing divs for the content)
+                         */
+                        do_action( 'woocommerce_after_main_content' );
+                ?>
+             </div>
 
-	
-
+	</div> 
+</div>
 <?php get_footer( 'shop' ); ?>

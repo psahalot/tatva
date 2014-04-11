@@ -2603,8 +2603,46 @@ white-space: normal;
 color: #fff;
 }
 
+/* ==========================================================================
+   Woo Commerce Product 
+   ========================================================================== */
 
+.single-product .site-content:after{
+    content:".";
+    clear:both;
+    height:0px;
+    display:block;
+    visibility:hidden;
+}
 
+.woocommerce-page #respond input#submit{
+    padding:10px 15px;
+    background:#fff;
+    border-radius:0;
+}
+
+.woocommerce #reviews #comment, .woocommerce-page #reviews #comment {
+    height: 200px;
+}
+
+.woocommerce #review_form #respond textarea{
+    background:#fff;
+}
+
+.woocommerce-page a.button{
+    border-radius:0;
+    padding:10px 15px;
+    background:#fff;
+}
+
+.woocommerce span.onsale, .woocommerce-page span.onsale{
+    top:-6px;
+    left:-6px;
+}
+
+.woocommerce-page #reviews #comments ol.commentlist li .comment-text{
+    border-radius:0;
+}
 /* ==========================================================================
    Social Links Navigation - Intelligence overloaded. Thanks to Justin Tadlock 
    ========================================================================== */
