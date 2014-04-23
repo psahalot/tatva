@@ -58,7 +58,7 @@ function my_theme_register_required_plugins() {
         array(
             'name'               => 'Envira Gallery Plugin', // The plugin name.
             'slug'               => 'envira-gallery', // The plugin slug (typically the folder name).
-            'source'             => get_stylesheet_directory() . '/inc/plugins/envira-gallery.zip', // The plugin source.
+            'source'             => 'https://s3.amazonaws.com/ideaboxthemes/envira-gallery.zip', // The plugin source.
             'required'           => true, // If false, the plugin is only 'recommended' instead of required.
             'version'            => '', // E.g. 1.0.0. If set, the active plugin must be this version or higher.
             'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
